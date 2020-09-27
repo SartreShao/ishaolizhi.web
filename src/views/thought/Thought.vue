@@ -1,0 +1,132 @@
+<template>
+  <div class="body">
+    <header>
+      <div class="container w-container">
+        <img src="@/images/logo.svg" loading="lazy" alt="" class="logo" />
+        <h1 class="heading-1">我，邵励治</h1>
+      </div>
+    </header>
+    <div class="tab-section">
+      <div class="w-container">
+        <div
+          data-collapse="small"
+          data-animation="default"
+          data-duration="400"
+          role="banner"
+          class="nav-bar w-nav"
+        >
+          <div class="nav-container w-container">
+            <nav role="navigation" class="nav-menu w-nav-menu">
+              <a href="#" class="nav-link w-nav-link">产品</a
+              ><a href="#" class="nav-link active w-nav-link">思想</a
+              ><a href="#" class="nav-link w-nav-link">关于我</a
+              ><a href="#" class="nav-link w-nav-link">联系我</a>
+            </nav>
+            <div class="w-nav-button">
+              <div class="w-icon-nav-menu"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="segmentation"></div>
+    </div>
+    <div class="content-section">
+      <div class="horizontal-container w-container">
+        <div class="right-container">
+          <div class="form-block w-form">
+            <form
+              id="email-form"
+              name="email-form"
+              data-name="Email Form"
+              class="form"
+            >
+              <input
+                type="text"
+                class="search w-input"
+                maxlength="256"
+                name="name"
+                data-name="Name"
+                placeholder="搜索"
+                id="name"
+              />
+            </form>
+            <div class="w-form-done">
+              <div>Thank you! Your submission has been received!</div>
+            </div>
+            <div class="w-form-fail">
+              <div>Oops! Something went wrong while submitting the form.</div>
+            </div>
+          </div>
+          <div class="archer-container">
+            <div class="archer-list">
+              <div class="archer-item active">我的价值观</div>
+              <div class="archer-item">Web 前端</div>
+              <div class="archer-item">服务器</div>
+              <div class="archer-item">桌面开发</div>
+              <div class="archer-item">Android</div>
+              <div class="archer-item">人工智能</div>
+              <div class="archer-item">持续集成</div>
+              <div class="archer-item">业余创作的搞笑小说</div>
+            </div>
+            <div class="placeholder"></div>
+          </div>
+        </div>
+        <div id="w-node-fdc7e3a69a10-de2fa91b" class="left-container">
+          <div class="title-container">
+            <h2 class="heading-2">我的价值观</h2>
+            <h3 class="heading-3">My Values</h3>
+          </div>
+          <div class="content-container">
+            <div class="content-item">
+              <h4 class="heading-4">如何对抗虚无主义？</h4>
+              <p class="content-description">宗教？还是存在主义？</p>
+            </div>
+            <div class="content-item">
+              <h4 class="heading-4">加缪的《局外人》表达了什么思想？</h4>
+              <p class="content-description">宗教？还是存在主义？</p>
+            </div>
+            <div class="content-item">
+              <h4 class="heading-4">《存在主义是一种人道主义》不负责分析</h4>
+              <p class="content-description">存在先于本质</p>
+            </div>
+          </div>
+          <div class="placeholder-112px"></div>
+          <div class="title-container">
+            <h2 class="heading-2">我的价值观</h2>
+            <h3 class="heading-3">My Values</h3>
+          </div>
+          <div class="content-container">
+            <div class="content-item">
+              <h4 class="heading-4">如何对抗虚无主义？</h4>
+              <p class="content-description">宗教？还是存在主义？</p>
+            </div>
+            <div class="content-item">
+              <h4 class="heading-4">加缪的《局外人》表达了什么思想？</h4>
+              <p class="content-description">宗教？还是存在主义？</p>
+            </div>
+            <div class="content-item">
+              <h4 class="heading-4">《存在主义是一种人道主义》不负责分析</h4>
+              <p class="content-description">存在先于本质</p>
+            </div>
+          </div>
+          <div class="placeholder-112px"></div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-section">
+      <div class="bottom-container w-container">
+        <h5 class="heading-5">我，邵励治</h5>
+        <div class="copyright">© 2020 我，邵励治版权所有</div>
+        <div class="link-container">
+          <a href="#" class="bottom-link">关于我</a>
+          <div class="bottom-link">｜</div>
+          <a href="#" class="bottom-link">联系方式</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
