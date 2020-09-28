@@ -1,35 +1,12 @@
 <template>
   <div class="body">
-    <header>
-      <div class="container w-container">
-        <img src="@/images/logo.svg" loading="lazy" alt="" class="logo" />
-        <h1 class="heading-1">我，邵励治</h1>
-      </div>
-    </header>
-    <div class="tab-section">
-      <div class="w-container">
-        <div
-          data-collapse="small"
-          data-animation="default"
-          data-duration="400"
-          role="banner"
-          class="nav-bar w-nav"
-        >
-          <div class="nav-container w-container">
-            <nav role="navigation" class="nav-menu w-nav-menu">
-              <a href="#" class="nav-link w-nav-link">产品</a
-              ><a href="#" class="nav-link w-nav-link">思想</a
-              ><a href="#" class="nav-link w-nav-link">关于我</a
-              ><a href="#" class="nav-link active w-nav-link">联系我</a>
-            </nav>
-            <div class="w-nav-button">
-              <div class="w-icon-nav-menu"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="segmentation"></div>
-    </div>
+    <!-- 顶部菜单 -->
+    <top-bar></top-bar>
+
+    <!-- 导航栏 -->
+    <tab></tab>
+
+    <!-- 内容 -->
     <div class="content-section">
       <div class="w-container">
         <div class="title-container">
@@ -97,20 +74,19 @@
         </div>
       </div>
     </div>
-    <div class="bottom-section">
-      <div class="bottom-container w-container">
-        <h5 class="heading-5">我，邵励治</h5>
-        <div class="copyright">© 2020 我，邵励治版权所有</div>
-        <div class="link-container">
-          <a href="#" class="bottom-link">关于我</a>
-          <div class="bottom-link">｜</div>
-          <a href="#" class="bottom-link">联系方式</a>
-        </div>
-      </div>
-    </div>
+
+    <!-- 底部菜单 -->
+    <bottom-bar></bottom-bar>
   </div>
 </template>
 
-<script>
-export default {};
+<script lang="ts">
+import TopBar from "@/components/TopBar.vue";
+import Tab from "@/components/Tab.vue";
+import BottomBar from "@/components/BottomBar.vue";
+import { defineComponent, watch, computed } from "vue";
+import { useRouter } from "vue-router";
+export default defineComponent({
+  components: { TopBar, Tab, BottomBar }
+});
 </script>

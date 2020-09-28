@@ -162,7 +162,8 @@
 import TopBar from "@/components/TopBar.vue";
 import Tab from "@/components/Tab.vue";
 import BottomBar from "@/components/BottomBar.vue";
-import { defineComponent } from "vue";
+import { defineComponent, watch, computed } from "vue";
+import { useRouter } from "vue-router";
 export default defineComponent({
   components: { TopBar, Tab, BottomBar }
 });
