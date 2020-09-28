@@ -2,7 +2,7 @@
   <div class="tab-section">
     <div class="w-container">
       <div
-        data-collapse="small"
+        data-collapse="none"
         data-animation="default"
         data-duration="400"
         role="banner"
