@@ -53,6 +53,7 @@
 }
 
 .nav-link {
+  cursor: pointer;
   padding: 13.5px 25px;
   font-family: source-han-sans-simplified-c, sans-serif;
   color: #222a36;

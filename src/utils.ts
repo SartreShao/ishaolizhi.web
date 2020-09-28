@@ -1,14 +1,14 @@
-import { useRouter, RouteLocationRaw } from "vue-router";
+import { Router, RouteLocationRaw } from "vue-router";
 
 const Router = {
-  replace: async (location: RouteLocationRaw) => {
-    await useRouter().replace(location);
+  replace: async (router: Router, location: RouteLocationRaw) => {
+    await router.replace(location);
   },
-  push: async (location: RouteLocationRaw) => {
-    await useRouter().push(location);
+  push: async (router: Router, location: RouteLocationRaw) => {
+    await router.push(location);
   },
-  back: () => {
-    useRouter().back();
+  back: (router: Router) => {
+    router.back();
   }
 };
 

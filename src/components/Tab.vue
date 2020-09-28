@@ -10,27 +10,34 @@
       >
         <div class="nav-container w-container">
           <nav role="navigation" class="nav-menu w-nav-menu">
-            <a
-              href="#"
+            <div
               class="nav-link w-nav-link"
               :class="{ active: currentRoutePath === '/' }"
-              >产品</a
-            ><a
-              href="#"
+              @click="click_product"
+            >
+              产品
+            </div>
+            <div
               class="nav-link w-nav-link"
               :class="{ active: currentRoutePath === '/thought' }"
-              >思想</a
-            ><a
-              href="#"
+              @click="click_thought"
+            >
+              思想
+            </div>
+            <div
               class="nav-link w-nav-link"
               :class="{ active: currentRoutePath === '/about-me' }"
-              >关于我</a
-            ><a
-              href="#"
+              @click="click_aboutMe"
+            >
+              关于我
+            </div>
+            <div
               class="nav-link w-nav-link"
               :class="{ active: currentRoutePath === '/contact-me' }"
-              >联系我</a
+              @click="click_contactMe"
             >
+              联系我
+            </div>
           </nav>
           <div class="w-nav-button">
             <div class="w-icon-nav-menu"></div>
@@ -45,6 +52,7 @@
 <script lang="ts">
 import { defineComponent, computed } from "vue";
 import { useRouter } from "vue-router";
+import { Router } from "@/utils";
 export default defineComponent({
   setup() {
     const router = useRouter();
@@ -54,8 +62,28 @@ export default defineComponent({
       return router.currentRoute.value.fullPath;
     });
 
+    const click_product = () => {
+      Router.replace(router, "/");
+    };
+
+    const click_thought = () => {
+      Router.replace(router, "/thought");
+    };
+
+    const click_aboutMe = () => {
+      Router.replace(router, "/about-me");
+    };
+
+    const click_contactMe = () => {
+      Router.replace(router, "/contact-me");
+    };
+
     return {
-      currentRoutePath
+      currentRoutePath,
+      click_product,
+      click_thought,
+      click_aboutMe,
+      click_contactMe
     };
   }
 });
