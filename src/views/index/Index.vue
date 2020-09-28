@@ -171,7 +171,7 @@ export default defineComponent({
 
 <style lang="stylus" scoped>
 .content-section {
-  animation slide-from-bottom 1s
+  animation slide-from-bottom .8s
 }
 
 @keyframes slide-from-bottom {

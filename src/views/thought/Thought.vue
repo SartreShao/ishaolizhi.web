@@ -105,3 +105,37 @@ export default defineComponent({
   components: { TopBar, Tab, BottomBar }
 });
 </script>
+
+<style lang="stylus" scoped>
+.right-container {
+  animation slide-from-right .8s
+}
+
+.left-container {
+  animation slide-from-left .8s
+}
+
+@keyframes slide-from-right {
+  0% {
+    opacity 0
+    transform translateX(40px)
+  }
+
+  100% {
+    opacity 1
+    transform translateX(0)
+  }
+}
+
+@keyframes slide-from-left {
+  0% {
+    opacity 0
+    transform translateX(-40px)
+  }
+
+  100% {
+    opacity 1
+    transform translateX(0)
+  }
+}
+</style>
