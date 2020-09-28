@@ -229,6 +229,7 @@
 }
 
 .bottom-link {
+  cursor: pointer;
   opacity: 0.6;
   font-family: source-han-sans-simplified-c, sans-serif;
   color: #fff;
