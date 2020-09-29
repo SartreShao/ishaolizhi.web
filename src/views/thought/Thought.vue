@@ -101,8 +101,12 @@ import TopBar from "@/components/TopBar.vue";
 import Tab from "@/components/Tab.vue";
 import BottomBar from "@/components/BottomBar.vue";
 import { defineComponent } from "vue";
+import { Article } from "@/api";
 export default defineComponent({
-  components: { TopBar, Tab, BottomBar }
+  components: { TopBar, Tab, BottomBar },
+  setup() {
+    Article.fetchArticleList();
+  }
 });
 </script>
 
