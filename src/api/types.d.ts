@@ -1,17 +1,4 @@
-export interface Article {
-  id: string;
-  createdAt: Date;
-  updatedAt: Date;
-  title?: string;
-  subTitle?: string;
-  href?: string;
-  articleDirectory?: ArticleDirectory;
-}
+import * as AV from "leancloud-storage";
 
-export interface ArticleDirectory {
-  id: string;
-  createdAt: Date;
-  updatedAt: Date;
-  chineseName?: string;
-  englishName?: string;
-}
+export const Article = AV.Object.extend("Article");
+export const ArticleDirectory = AV.Object.extend("ArticleDirectory");
