@@ -108,29 +108,29 @@ export default defineComponent({
 
 <style lang="stylus" scoped>
 .right-container {
-  animation slide-from-right .8s
+  animation slide-from-right 1s
 }
 
 .left-container {
-  animation slide-from-left .8s
+  animation slide-from-left 1s
 }
 
 @keyframes slide-from-right {
   0% {
     opacity 0
-    transform translateX(40px)
+    transform translateY(500px)
   }
 
   100% {
     opacity 1
-    transform translateX(0)
+    transform translateY(0)
   }
 }
 
 @keyframes slide-from-left {
   0% {
     opacity 0
-    transform translateX(-40px)
+    transform translateX(-500px)
   }
 
   100% {
