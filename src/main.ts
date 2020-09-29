@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import * as firebase from "firebase";
+import AV from "leancloud-storage";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -16,6 +17,12 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+
+AV.init({
+  appId: "Eg39w11lqO8cv6GPphyxCQRF-gzGzoHsz",
+  appKey: "6es1crbDK0vqy7NQNelNmBuI",
+  serverURL: "https://please-replace-with-your-customized.domain.com"
+});
 
 router.afterEach(() => {
   window.scrollTo({ top: 0, behavior: "smooth" });
