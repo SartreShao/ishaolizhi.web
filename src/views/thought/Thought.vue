@@ -44,6 +44,7 @@
 
             <div class="content-container" :id="`a` + articleDirectory.id">
               <div
+                style="cursor: pointer;"
                 class="content-item"
                 v-for="article in articleDirectory.attributes
                   .articleListOfArticleDirectory"
