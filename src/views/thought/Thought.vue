@@ -73,6 +73,7 @@
                 v-for="article in articleDirectory.attributes
                   .articleListOfArticleDirectory"
                 :key="article.id"
+                @click="click_article(article)"
               >
                 <h4 class="heading-4">{{ article.attributes.title }}</h4>
                 <p class="content-description">
@@ -105,10 +106,15 @@ export default defineComponent({
   setup() {
     const articleDirectoryList: Ref<AV.Object[]> = ref([]);
 
+    const click_article = (article: AV.Object) => {
+      window.open(article.attributes.href, "_blank");
+    };
+
     ThoughtPage.init(articleDirectoryList);
 
     return {
-      articleDirectoryList
+      articleDirectoryList,
+      click_article
     };
   }
 });
