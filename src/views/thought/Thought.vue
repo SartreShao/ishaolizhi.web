@@ -10,34 +10,8 @@
     <div class="content-section">
       <div class="horizontal-container w-container">
         <div class="right-container">
-          <!-- 搜索框 -->
-          <div class="form-block w-form" style="position:sticky;top:85.5px;">
-            <form
-              id="email-form"
-              name="email-form"
-              data-name="Email Form"
-              class="form"
-            >
-              <input
-                type="text"
-                class="search w-input"
-                maxlength="256"
-                name="name"
-                data-name="Name"
-                placeholder="搜索"
-                id="name"
-              />
-            </form>
-            <div class="w-form-done">
-              <div>Thank you! Your submission has been received!</div>
-            </div>
-            <div class="w-form-fail">
-              <div>Oops! Something went wrong while submitting the form.</div>
-            </div>
-          </div>
-
           <!-- 目录 -->
-          <div class="archer-container" style="position:sticky;top:169.5px;">
+          <div class="archer-container" style="position:sticky;top:85.5px;">
             <div class="archer-list">
               <div
                 class="archer-item"

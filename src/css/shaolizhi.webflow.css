@@ -617,6 +617,9 @@
     -ms-flex-pack: center;
     justify-content: center;
   }
+  .archer-item {
+    text-align: left;
+  }
   .horizontal-container {
     display: -webkit-box;
     display: -webkit-flex;
@@ -652,6 +655,9 @@
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
+  }
+  .archer-item {
+    text-align: left;
   }
   .image {
     width: auto;
@@ -691,6 +697,7 @@
   .archer-item {
     text-align: left;
   }
+
   .image {
     width: auto;
     height: auto;
