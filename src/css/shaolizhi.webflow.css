@@ -544,6 +544,7 @@
 }
 
 .download-link {
+  cursor: pointer;
   color: #5f4b8b;
   font-size: 12px;
   line-height: 17px;

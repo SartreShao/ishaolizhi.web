@@ -44,9 +44,13 @@
           </div>
           <div class="contact-container">
             <div class="contact-line">
-              <div class="download-link">简历下载</div>
+              <div class="download-link" @click="click_downloadResume">
+                简历下载
+              </div>
               <div class="contact-placeholder"></div>
-              <div class="download-link">时间壁垒 BP 下载</div>
+              <div class="download-link" @click="click_downloadBP">
+                时间壁垒 BP 下载
+              </div>
             </div>
             <div class="contact-line">
               <div class="contact-info">
@@ -55,9 +59,9 @@
             </div>
             <div class="contact-line">
               <div class="contact-info">知乎：</div>
-              <div class="download-link">@邵励治</div>
+              <div class="download-link" @click="click_zhihu">@邵励治</div>
               <div class="contact-info">·</div>
-              <div class="download-link">联系我</div>
+              <div class="download-link" @click="click_contactMe">联系我</div>
             </div>
           </div>
         </div>
@@ -75,8 +79,38 @@ import Tab from "@/components/Tab.vue";
 import BottomBar from "@/components/BottomBar.vue";
 import { defineComponent, watch, computed } from "vue";
 import { useRouter } from "vue-router";
+import { Router } from "@/utils";
 export default defineComponent({
-  components: { TopBar, Tab, BottomBar }
+  components: { TopBar, Tab, BottomBar },
+  setup() {
+    const router = useRouter();
+
+    const click_downloadResume = () => {
+      window.open("", "_blank");
+    };
+
+    const click_downloadBP = () => {
+      window.open(
+        "http://lc-Eg39w11l.cn-n1.lcfile.com/69d89af56ea21bfd5c90.pdf/%E6%97%B6%E9%97%B4%E5%A3%81%E5%9E%92%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B9%A6.pdf",
+        "_blank"
+      );
+    };
+
+    const click_zhihu = () => {
+      window.open("https://www.zhihu.com/people/shaolizhi11", "_blank");
+    };
+
+    const click_contactMe = () => {
+      Router.replace(router, "/contact-me");
+    };
+
+    return {
+      click_downloadResume,
+      click_downloadBP,
+      click_zhihu,
+      click_contactMe
+    };
+  }
 });
 </script>
 
