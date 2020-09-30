@@ -482,6 +482,7 @@
 }
 
 .archer-item {
+  cursor: pointer;
   margin-bottom: 14px;
   color: #222a36;
   font-weight: 100;

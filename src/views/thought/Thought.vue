@@ -39,14 +39,15 @@
           <!-- 目录 -->
           <div class="archer-container" style="position:sticky;top:169.5px;">
             <div class="archer-list">
-              <div class="archer-item active">我的价值观</div>
-              <div class="archer-item">Web 前端</div>
-              <div class="archer-item">服务器</div>
-              <div class="archer-item">桌面开发</div>
-              <div class="archer-item">Android</div>
-              <div class="archer-item">人工智能</div>
-              <div class="archer-item">持续集成</div>
-              <div class="archer-item">业余创作的搞笑小说</div>
+              <div
+                class="archer-item"
+                v-for="(articleDirectory, index) in articleDirectoryList"
+                :class="{ active: currentIndex === index }"
+                :key="articleDirectory.id"
+                @click="click_articleDirectory(articleDirectory, index)"
+              >
+                {{ articleDirectory.attributes.chineseName }}
+              </div>
             </div>
             <div class="placeholder"></div>
           </div>
@@ -67,7 +68,7 @@
               </h3>
             </div>
 
-            <div class="content-container">
+            <div class="content-container" :id="`a` + articleDirectory.id">
               <div
                 class="content-item"
                 v-for="article in articleDirectory.attributes
@@ -110,11 +111,28 @@ export default defineComponent({
       window.open(article.attributes.href, "_blank");
     };
 
+    const currentIndex = ref(0);
+
+    const click_articleDirectory = (
+      articleDirectory: AV.Object,
+      index: number
+    ) => {
+      const element = document.querySelector("#a" + articleDirectory.id);
+      currentIndex.value = index;
+      if (element !== null) {
+        console.log("element", element);
+        element.scrollIntoView(true);
+        window.scrollBy({ top: -148, behavior: "smooth" });
+      }
+    };
+
     ThoughtPage.init(articleDirectoryList);
 
     return {
       articleDirectoryList,
-      click_article
+      click_article,
+      click_articleDirectory,
+      currentIndex
     };
   }
 });
