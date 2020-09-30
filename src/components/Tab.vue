@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-section">
+  <div class="tab-section" style="position:sticky;top:0px;">
     <div class="w-container">
       <div
         data-collapse="none"

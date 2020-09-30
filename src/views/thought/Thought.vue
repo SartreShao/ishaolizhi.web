@@ -11,7 +11,7 @@
       <div class="horizontal-container w-container">
         <div class="right-container">
           <!-- 搜索框 -->
-          <div class="form-block w-form">
+          <div class="form-block w-form" style="position:sticky;top:85.5px;">
             <form
               id="email-form"
               name="email-form"
@@ -37,7 +37,7 @@
           </div>
 
           <!-- 目录 -->
-          <div class="archer-container">
+          <div class="archer-container" style="position:sticky;top:169.5px;">
             <div class="archer-list">
               <div class="archer-item active">我的价值观</div>
               <div class="archer-item">Web 前端</div>
