@@ -34,6 +34,7 @@
             <div class="contact-form w-form">
               <form id="email-form" name="email-form" data-name="Email Form">
                 <input
+                  v-model="name"
                   type="text"
                   class="input w-input"
                   maxlength="256"
@@ -42,6 +43,7 @@
                   placeholder="姓名"
                   id="name"
                 /><input
+                  v-model="email"
                   type="email"
                   class="input w-input"
                   maxlength="256"
@@ -50,18 +52,16 @@
                   placeholder="邮箱"
                   id="email"
                 /><textarea
+                  v-model="message"
                   placeholder="聊点什么？"
                   maxlength="5000"
                   id="field"
                   name="field"
                   class="input-area w-input"
-                ></textarea
-                ><input
-                  type="submit"
-                  value="发送"
-                  data-wait="Please wait..."
-                  class="submit-button w-button"
-                />
+                ></textarea>
+                <div @click="click_submit" class="submit-button w-button">
+                  {{ buttonText }}
+                </div>
               </form>
               <div class="w-form-done">
                 <div>Thank you! Your submission has been received!</div>
@@ -84,10 +84,27 @@
 import TopBar from "@/components/TopBar.vue";
 import Tab from "@/components/Tab.vue";
 import BottomBar from "@/components/BottomBar.vue";
-import { defineComponent, watch, computed } from "vue";
+import { defineComponent, watch, computed, ref } from "vue";
 import { useRouter } from "vue-router";
+import { ContactMePage } from "@/viewmodel";
 export default defineComponent({
-  components: { TopBar, Tab, BottomBar }
+  components: { TopBar, Tab, BottomBar },
+  setup() {
+    const name = ref("");
+    const email = ref("");
+    const message = ref("");
+    const buttonText = ref("发送");
+    const click_submit = () => {
+      ContactMePage.sendMessage(name, email, message, buttonText);
+    };
+    return {
+      name,
+      email,
+      message,
+      buttonText,
+      click_submit
+    };
+  }
 });
 </script>
 

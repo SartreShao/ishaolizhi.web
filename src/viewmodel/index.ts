@@ -1,2 +1,4 @@
 import ThoughtPage from "./ThoughtPage";
-export { ThoughtPage };
+import ContactMePage from "./ContactMePage";
+
+export { ThoughtPage, ContactMePage };
