@@ -6,7 +6,7 @@ export default {
     try {
       // 查询全部的 ArticleDirectory，按优先级 order 降序排列
       const articleDirectoryList = await new AV.Query(ArticleDirectory)
-        .descending("order")
+        .ascending("order")
         .find();
 
       if (!includeArticleList) {
@@ -19,11 +19,13 @@ export default {
         .containedIn("articleDirectory", articleDirectoryList)
         .find();
 
+      console.log("articleList", articleList);
+
       // 组合 Article 与 ArticleDirectory
       articleDirectoryList.forEach(articleDirectory => {
         articleDirectory.attributes.articleListOfArticleDirectory = [];
         articleList.forEach(article => {
-          if (article.id === articleDirectory.id) {
+          if (article.attributes.articleDirectory.id === articleDirectory.id) {
             articleDirectory.attributes.articleListOfArticleDirectory.push(
               article
             );

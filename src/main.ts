@@ -21,7 +21,7 @@ firebase.initializeApp(firebaseConfig);
 AV.init({
   appId: "Eg39w11lqO8cv6GPphyxCQRF-gzGzoHsz",
   appKey: "6es1crbDK0vqy7NQNelNmBuI",
-  serverURL: "https://please-replace-with-your-customized.domain.com"
+  serverURL: "https://ishaolizhi.api.hearfresh.cn"
 });
 
 router.afterEach(() => {

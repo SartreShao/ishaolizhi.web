@@ -10,6 +10,7 @@
     <div class="content-section">
       <div class="horizontal-container w-container">
         <div class="right-container">
+          <!-- 搜索框 -->
           <div class="form-block w-form">
             <form
               id="email-form"
@@ -34,6 +35,8 @@
               <div>Oops! Something went wrong while submitting the form.</div>
             </div>
           </div>
+
+          <!-- 目录 -->
           <div class="archer-container">
             <div class="archer-list">
               <div class="archer-item active">我的价值观</div>
@@ -48,45 +51,38 @@
             <div class="placeholder"></div>
           </div>
         </div>
+
+        <!-- 文章列表 -->
         <div id="w-node-fdc7e3a69a10-de2fa91b" class="left-container">
-          <div class="title-container">
-            <h2 class="heading-2">我的价值观</h2>
-            <h3 class="heading-3">My Values</h3>
+          <div
+            v-for="articleDirectory in articleDirectoryList"
+            :key="articleDirectory.id"
+          >
+            <div class="title-container">
+              <h2 class="heading-2">
+                {{ articleDirectory.attributes.chineseName }}
+              </h2>
+              <h3 class="heading-3">
+                {{ articleDirectory.attributes.englishName }}
+              </h3>
+            </div>
+
+            <div class="content-container">
+              <div
+                class="content-item"
+                v-for="article in articleDirectory.attributes
+                  .articleListOfArticleDirectory"
+                :key="article.id"
+              >
+                <h4 class="heading-4">{{ article.attributes.title }}</h4>
+                <p class="content-description">
+                  {{ article.attributes.subTitle }}
+                </p>
+              </div>
+            </div>
+
+            <div class="placeholder-112px"></div>
           </div>
-          <div class="content-container">
-            <div class="content-item">
-              <h4 class="heading-4">如何对抗虚无主义？</h4>
-              <p class="content-description">宗教？还是存在主义？</p>
-            </div>
-            <div class="content-item">
-              <h4 class="heading-4">加缪的《局外人》表达了什么思想？</h4>
-              <p class="content-description">宗教？还是存在主义？</p>
-            </div>
-            <div class="content-item">
-              <h4 class="heading-4">《存在主义是一种人道主义》不负责分析</h4>
-              <p class="content-description">存在先于本质</p>
-            </div>
-          </div>
-          <div class="placeholder-112px"></div>
-          <div class="title-container">
-            <h2 class="heading-2">我的价值观</h2>
-            <h3 class="heading-3">My Values</h3>
-          </div>
-          <div class="content-container">
-            <div class="content-item">
-              <h4 class="heading-4">如何对抗虚无主义？</h4>
-              <p class="content-description">宗教？还是存在主义？</p>
-            </div>
-            <div class="content-item">
-              <h4 class="heading-4">加缪的《局外人》表达了什么思想？</h4>
-              <p class="content-description">宗教？还是存在主义？</p>
-            </div>
-            <div class="content-item">
-              <h4 class="heading-4">《存在主义是一种人道主义》不负责分析</h4>
-              <p class="content-description">存在先于本质</p>
-            </div>
-          </div>
-          <div class="placeholder-112px"></div>
         </div>
       </div>
     </div>
@@ -100,12 +96,20 @@
 import TopBar from "@/components/TopBar.vue";
 import Tab from "@/components/Tab.vue";
 import BottomBar from "@/components/BottomBar.vue";
-import { defineComponent } from "vue";
-import { Article } from "@/api";
+import { defineComponent, Ref, ref } from "vue";
+import { ThoughtPage } from "@/viewmodel";
+import AV from "leancloud-storage";
+
 export default defineComponent({
   components: { TopBar, Tab, BottomBar },
   setup() {
-    Article.fetchArticleList();
+    const articleDirectoryList: Ref<AV.Object[]> = ref([]);
+
+    ThoughtPage.init(articleDirectoryList);
+
+    return {
+      articleDirectoryList
+    };
   }
 });
 </script>
