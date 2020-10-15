@@ -91,7 +91,7 @@ export default defineComponent({
 
     const click_downloadBP = () => {
       window.open(
-        "http://lc-Eg39w11l.cn-n1.lcfile.com/69d89af56ea21bfd5c90.pdf/%E6%97%B6%E9%97%B4%E5%A3%81%E5%9E%92%E5%95%86%E4%B8%9A%E8%AE%A1%E5%88%92%E4%B9%A6.pdf",
+        "https://ishaolizhi.file.hearfresh.cn/d7805b10c09c12b90d6b.pdf/timebarrier-bp.pdf",
         "_blank"
       );
     };
