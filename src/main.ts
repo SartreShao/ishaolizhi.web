@@ -17,6 +17,7 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+firebase.analytics();
 
 AV.init({
   appId: "Eg39w11lqO8cv6GPphyxCQRF-gzGzoHsz",
