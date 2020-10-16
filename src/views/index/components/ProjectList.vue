@@ -22,7 +22,6 @@ export default {
 
     await ProductPage.fetchProjectList(projectList);
 
-    await Time.sleep(100000);
     return {
       projectList
     };

@@ -3,7 +3,8 @@ import App from "./App.vue";
 import router from "./router";
 import * as firebase from "firebase";
 import AV from "leancloud-storage";
-
+import Antd from "ant-design-vue";
+import "ant-design-vue/dist/antd.css";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyD_Y23nF7awV1rSW4ASUVTP55d1_S10eN4",
@@ -31,4 +32,5 @@ router.afterEach(() => {
 
 createApp(App)
   .use(router)
+  .use(Antd)
   .mount("#app");
