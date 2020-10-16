@@ -14,6 +14,7 @@ import ProjectItem from "./ProjectItem.vue";
 import { Ref, ref } from "vue";
 import AV from "leancloud-storage";
 import { ProductPage } from "@/viewmodel";
+import { Time } from "@/utils";
 export default {
   components: { ProjectItem },
   async setup() {
@@ -21,6 +22,7 @@ export default {
 
     await ProductPage.fetchProjectList(projectList);
 
+    await Time.sleep(100000);
     return {
       projectList
     };

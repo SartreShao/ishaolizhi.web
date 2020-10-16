@@ -12,4 +12,8 @@ const Router = {
   }
 };
 
-export { Router };
+const Time = {
+  sleep: (time: number) => new Promise(resolve => setTimeout(resolve, time))
+};
+
+export { Router, Time };

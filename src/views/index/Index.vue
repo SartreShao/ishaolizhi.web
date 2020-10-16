@@ -58,9 +58,7 @@
             <project-list></project-list>
           </template>
 
-          <template #fallback>
-            <div>Loading...</div>
-          </template>
+          <template #fallback> </template>
         </Suspense>
       </div>
 
@@ -78,7 +76,7 @@ import TopBar from "@/components/TopBar.vue";
 import Tab from "@/components/Tab.vue";
 import BottomBar from "@/components/BottomBar.vue";
 import ProjectList from "./components/ProjectList.vue";
-
+import ContentLoading from "@/components/ContentLoading.vue";
 export default {
   components: { TopBar, Tab, BottomBar, ProjectList }
 };

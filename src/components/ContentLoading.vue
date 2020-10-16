@@ -93,7 +93,7 @@ export default {
       validator: validateColor
     }
   },
-  setup(props, context) {
+  setup(props: any, context: any) {
     const uid: Ref<string | null> = ref(null);
 
     const viewbox = computed(() => `0 0 ${props.width} ${props.height}`);
