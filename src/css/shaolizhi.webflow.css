@@ -250,6 +250,7 @@
 }
 
 .product-item-container {
+  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -336,14 +337,6 @@
   -ms-flex-align: center;
   align-items: center;
   line-height: 15px;
-}
-
-.tag-item.green {
-  background-color: #039e7e;
-}
-
-.tag-item.purple {
-  background-color: #5a5b9f;
 }
 
 .tag-item-container {
