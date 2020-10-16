@@ -8,6 +8,7 @@
 
     <!-- 内容 -->
     <div class="content-section">
+      <!-- 我的产品基本认知 -->
       <div class="w-container">
         <div class="title-container">
           <h2 class="heading-2">我的产品基本认知</h2>
@@ -39,13 +40,21 @@
           </div>
         </div>
       </div>
+
+      <!-- 分割线 -->
       <div class="placeholder-112px"></div>
+
+      <!-- 我创造的产品 -->
       <div class="w-container">
+        <!-- 标题 -->
         <div class="title-container">
           <h2 class="heading-2">我创造的产品</h2>
           <h3 class="heading-3">The Products I Created</h3>
         </div>
+
+        <!-- 产品列表 -->
         <div class="product-container">
+          <!-- SchoolIns -->
           <div class="product-item-container">
             <div class="logo-container">
               <img
@@ -60,6 +69,8 @@
             <p class="product-description">校园模特约拍</p>
             <p class="product-type">微信小程序</p>
           </div>
+
+          <!-- 听鲜 -->
           <div class="product-item-container">
             <div class="logo-container">
               <img
@@ -79,6 +90,8 @@
               </div>
             </div>
           </div>
+
+          <!-- 听鲜测评室 -->
           <div class="product-item-container">
             <div class="logo-container">
               <img
@@ -98,6 +111,8 @@
               </div>
             </div>
           </div>
+
+          <!-- 心愿部 -->
           <div class="product-item-container">
             <div class="logo-container">
               <img
@@ -112,6 +127,8 @@
             <p class="product-description">种草电商</p>
             <p class="product-type">微信小程序</p>
           </div>
+
+          <!-- COEO -->
           <div class="product-item-container">
             <div class="logo-container">
               <img
@@ -126,6 +143,8 @@
             <p class="product-description">电子名片管理</p>
             <p class="product-type">IOS</p>
           </div>
+
+          <!-- 时间壁垒 -->
           <div class="product-item-container">
             <div class="logo-container">
               <img
@@ -150,6 +169,8 @@
           </div>
         </div>
       </div>
+
+      <!-- 分割线 -->
       <div class="placeholder-140px"></div>
     </div>
 

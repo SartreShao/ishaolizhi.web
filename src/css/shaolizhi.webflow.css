@@ -317,6 +317,7 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 12px;
 }
 
 .tag-item {
