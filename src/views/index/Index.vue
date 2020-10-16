@@ -54,120 +54,11 @@
 
         <!-- 产品列表 -->
         <div class="product-container">
-          <!-- SchoolIns -->
-          <div class="product-item-container">
-            <div class="logo-container">
-              <img
-                src="@/images/schoolIns_logo.png"
-                loading="lazy"
-                width="80"
-                height="80"
-                alt=""
-              />
-            </div>
-            <h4 class="product-name">SchoolIns</h4>
-            <p class="product-description">校园模特约拍</p>
-            <p class="product-type">微信小程序</p>
-          </div>
-
-          <!-- 听鲜 -->
-          <div class="product-item-container">
-            <div class="logo-container">
-              <img
-                src="@/images/hearfresh_wechat_logo.png"
-                loading="lazy"
-                width="80"
-                height="80"
-                alt=""
-              />
-            </div>
-            <h4 class="product-name">听鲜</h4>
-            <p class="product-description">耳机电商</p>
-            <p class="product-type">微信小程序</p>
-            <div class="tag-container">
-              <div class="tag-item green">
-                <div class="tag-name">创业项目</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 听鲜测评室 -->
-          <div class="product-item-container">
-            <div class="logo-container">
-              <img
-                src="@/images/hearfresh_logo.png"
-                loading="lazy"
-                width="80"
-                height="80"
-                alt=""
-              />
-            </div>
-            <h4 class="product-name">听鲜测评室</h4>
-            <p class="product-description">耳机自媒体</p>
-            <p class="product-type">Bilibili</p>
-            <div class="tag-container">
-              <div class="tag-item green">
-                <div class="tag-name">创业项目</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 心愿部 -->
-          <div class="product-item-container">
-            <div class="logo-container">
-              <img
-                src="@/images/wish_logo.png"
-                loading="lazy"
-                width="80"
-                height="80"
-                alt=""
-              />
-            </div>
-            <h4 class="product-name">心愿部 Club Suprise</h4>
-            <p class="product-description">种草电商</p>
-            <p class="product-type">微信小程序</p>
-          </div>
-
-          <!-- COEO -->
-          <div class="product-item-container">
-            <div class="logo-container">
-              <img
-                src="@/images/ceco_logo.png"
-                loading="lazy"
-                width="80"
-                height="80"
-                alt=""
-              />
-            </div>
-            <h4 class="product-name">COEO</h4>
-            <p class="product-description">电子名片管理</p>
-            <p class="product-type">IOS</p>
-          </div>
-
-          <!-- 时间壁垒 -->
-          <div class="product-item-container">
-            <div class="logo-container">
-              <img
-                src="@/images/timebarrier_logo.png"
-                loading="lazy"
-                width="80"
-                height="80"
-                alt=""
-              />
-            </div>
-            <h4 class="product-name">时间壁垒</h4>
-            <p class="product-description">时间管理工具</p>
-            <p class="product-type">Electron / IOS / Android</p>
-            <div class="tag-container">
-              <div class="tag-item purple">
-                <div class="tag-name">正在进行</div>
-              </div>
-              <div class="tag-item green">
-                <div class="tag-name">创业项目</div>
-              </div>
-            </div>
-          </div>
-          
+          <project-item
+            v-for="project in projectList"
+            :key="project.id"
+            :project="project"
+          ></project-item>
         </div>
       </div>
 
@@ -184,10 +75,23 @@
 import TopBar from "@/components/TopBar.vue";
 import Tab from "@/components/Tab.vue";
 import BottomBar from "@/components/BottomBar.vue";
-import { defineComponent, watch, computed } from "vue";
+import ProjectItem from "./components/ProjectItem.vue";
+import { defineComponent, watch, computed, Ref, ref } from "vue";
 import { useRouter } from "vue-router";
+import { ProductPage } from "@/viewmodel";
+import AV from "leancloud-storage";
+
 export default defineComponent({
-  components: { TopBar, Tab, BottomBar }
+  components: { TopBar, Tab, BottomBar, ProjectItem },
+  setup() {
+    const projectList: Ref<AV.Object[]> = ref([]);
+
+    ProductPage.fetchProjectList(projectList);
+
+    return {
+      projectList
+    };
+  }
 });
 </script>
 
