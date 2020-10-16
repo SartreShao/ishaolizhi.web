@@ -1,11 +1,11 @@
 <template>
   <!-- 产品列表 -->
   <div class="product-container">
-    <project-item
+    <ProjectItem
       v-for="project in projectList"
       :key="project.id"
       :project="project"
-    ></project-item>
+    ></ProjectItem>
   </div>
 </template>
 

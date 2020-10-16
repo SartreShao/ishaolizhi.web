@@ -14,11 +14,11 @@
     <p class="product-description">{{ project.attributes.description }}</p>
     <p class="product-type">{{ project.attributes.type }}</p>
     <div class="tag-container">
-      <tag-item
+      <TagItem
         v-for="tag in project.attributes.tagListOfProject"
         :key="tag.id"
         :tag="tag"
-      ></tag-item>
+      ></TagItem>
     </div>
   </div>
 </template>

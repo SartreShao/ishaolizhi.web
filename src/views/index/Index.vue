@@ -55,7 +55,7 @@
         <!-- 产品列表 -->
         <Suspense>
           <template #default>
-            <project-list></project-list>
+            <ProjectList></ProjectList>
           </template>
 
           <template #fallback>
