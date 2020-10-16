@@ -86,7 +86,10 @@ export default defineComponent({
     const router = useRouter();
 
     const click_downloadResume = () => {
-      window.open("", "_blank");
+      window.open(
+        "https://ishaolizhi.file.hearfresh.cn/a9d08eaa4b1aa13ac7a0.pdf/%E9%82%B5%E5%8A%B1%E6%B2%BB%20%E7%AE%80%E5%8E%86.pdf",
+        "_blank"
+      );
     };
 
     const click_downloadBP = () => {
