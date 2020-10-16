@@ -53,13 +53,15 @@
         </div>
 
         <!-- 产品列表 -->
-        <div class="product-container">
-          <project-item
-            v-for="project in projectList"
-            :key="project.id"
-            :project="project"
-          ></project-item>
-        </div>
+        <Suspense>
+          <template #default>
+            <project-list></project-list>
+          </template>
+
+          <template #fallback>
+            <div>Loading...</div>
+          </template>
+        </Suspense>
       </div>
 
       <!-- 分割线 -->
@@ -75,24 +77,11 @@
 import TopBar from "@/components/TopBar.vue";
 import Tab from "@/components/Tab.vue";
 import BottomBar from "@/components/BottomBar.vue";
-import ProjectItem from "./components/ProjectItem.vue";
-import { defineComponent, watch, computed, Ref, ref } from "vue";
-import { useRouter } from "vue-router";
-import { ProductPage } from "@/viewmodel";
-import AV from "leancloud-storage";
+import ProjectList from "./components/ProjectList.vue";
 
-export default defineComponent({
-  components: { TopBar, Tab, BottomBar, ProjectItem },
-  setup() {
-    const projectList: Ref<AV.Object[]> = ref([]);
-
-    ProductPage.fetchProjectList(projectList);
-
-    return {
-      projectList
-    };
-  }
-});
+export default {
+  components: { TopBar, Tab, BottomBar, ProjectList }
+};
 </script>
 
 <style lang="stylus" scoped>
