@@ -14,7 +14,7 @@
         </template>
 
         <template #fallback>
-          <a-skeleton active></a-skeleton>
+          <a-skeleton active class="w-container"></a-skeleton>
         </template>
       </Suspense>
 
