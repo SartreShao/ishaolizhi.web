@@ -1,6 +1,6 @@
 <template>
   <!-- 时间壁垒 -->
-  <div class="product-item-container">
+  <div class="product-item-container" @click="click_openProductLink">
     <div class="logo-container">
       <img
         :src="project.attributes.logo.attributes.url"
@@ -34,6 +34,15 @@ export default defineComponent({
   },
   components: {
     TagItem
+  },
+  setup(props, context) {
+    const click_openProductLink = () => {
+      window.open((props.project as AV.Object).attributes.link, "_blank");
+    };
+
+    return {
+      click_openProductLink
+    };
   }
 });
 </script>

@@ -114,6 +114,10 @@
   font-weight: 400;
 }
 
+.content-container {
+  margin-bottom: 100px;
+}
+
 .content-section {
   padding-top: 37px;
   padding-right: 50px;
@@ -328,6 +332,7 @@
   display: flex;
   margin-right: 9px;
   padding: 2px 7px;
+  font-size: 10px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
