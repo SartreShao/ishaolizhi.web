@@ -17,6 +17,7 @@ export default {
       // 查询全部的 Article
       const articleList = await new AV.Query(Article)
         .containedIn("articleDirectory", articleDirectoryList)
+        .addDescending("updatedAt")
         .find();
 
       console.log("articleList", articleList);
